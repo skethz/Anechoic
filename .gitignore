@@ -7,3 +7,12 @@ __pycache__/
 fpga/v80_snowball/data/
 research/gset_20261007/data/
 research/reaim_benchmarks_20261008/data/tsplib/
+.venv/
+outputs/
+*.vo
+*.vok
+*.vos
+*.glob
+.*.aux
+.lia.cache
+.nra.cache

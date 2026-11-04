@@ -1,0 +1,5 @@
+# Optional: the DMFT solver (dmft_torch.py) and the Neal reference runs.
+# The dwave-samplers version used by each run is recorded in its protocol file.
+torch
+dimod
+dwave-samplers
