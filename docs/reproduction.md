@@ -41,7 +41,7 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | Figure 1 (the echo and its removal) | `research/headline_echo_20261009/` (`echo_stats.py`, `plot_headline.py`) |
 | Figure 2 (theory and simulation) | `research/dmft_sca_20261004/` (`dmft.py`, `dmft_torch.py`, `plot_theory_vs_sim_v2.py`) |
 | Table 1 (machine-checked statements) | `research/formal_verification_20261007/` (`SPEC.md`) |
-| Figure 3 (comparison at published settings) | `research/fairness_audit_20261008/k2000_pub/` (`run_pub.py`, `make_fig.py`, `pub_methods.py`), with the algorithm folders above |
+| Figure 3 (comparison at published settings) | `research/fairness_audit_20261008/k2000_pub/` (`run_pub.py`, `pub_methods.py`, Amendment A6; data and plot in `fig_A6_withTEC/`), with the algorithm folders above |
 | Stability predictions for the correction | `research/theory_ideas_20261003/` (`a2.py`, `PROTOCOL_A2.md`) |
 | Figure 4 and the engine design | `fpga/v80_sca/src/v6/`, `fpga/v80_sca/DESIGN.md` |
 | Tables 2 and 3 (board TTS99, design evolution) | `fpga/v80_sca/` (`RESULTS_HW.md`, `RESULTS_MULTIBIT.md`, `PROTOCOL_HW*.md`, `results/`) |
@@ -76,6 +76,7 @@ The V80 builds run from `fpga/v80_sca/scripts/` and need AMD Vivado/Vitis 2025.1
 - **Placeholders.** The experiments ran on the authors' servers. For publication, user names, host names, local paths and device identifiers were replaced by placeholders: `/scratch/USER`, `gpu-host`, `fpga-host` and `GPU-xxxxxxxx-…`. Set them for your environment.
 - **Hash records.** The SHA-256 records of the frozen protocols and inputs (`*.sha256`, `SHA256SUMS*.txt`) refer to the unredacted originals. The self-test in `research/fairness_audit_20261008/k2000_pub/pub_methods.py` checks the published files.
 - **Protocol gates.** The V80 bring-up and run scripts (`fpga/v80_sca/scripts/bringup_*.sh`, `run_hw_v6_a5.sh`) stop unless the frozen protocol files match their records. In this release that check fails, because paths were replaced and some inputs are not included. Regenerate the records for your setup, or remove the check.
+- **Removed from this release.** Unreferenced exploratory scripts, an earlier board power run and unused variants of Figure 3 were removed. They remain in the Git history.
 - **Superseded documents.** Some reports in the study folders were written before the final measurements. Each carries a dated note at the top that gives the final values and their source.
 - **Raw data.** Per-trial records, spin states and traces are not included because of their size. The summaries, and the scripts that produced them, are included.
 - **ASIC.** The ASIC folders contain the RTL, its regression against the golden model and the derived totals. Synthesis and place-and-route scripts and reports are not included, because they depend on a foundry design kit under a non-disclosure agreement.
