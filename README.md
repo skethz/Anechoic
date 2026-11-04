@@ -88,6 +88,16 @@ python research/fairness_audit_20261008/k2000_pub/pub_methods.py   # pub_methods
 python research/headline_echo_20261009/plot_headline.py outputs/figure1.pdf
 ```
 
+To check any table or figure, use the paper's name for it:
+
+```bash
+python reproduce.py --list
+python reproduce.py table2 figure3
+python reproduce.py all
+```
+
+Each line says whether the value was computed again, plotted from stored data or read from a stored measurement. See the [reproduction guide](docs/reproduction.md) for the details.
+
 ## <a name="fpga"></a> 🔩 FPGA
 
 Twelve hand-written RTL engines run at 250 MHz on the AMD Alveo V80. One step takes 18.1 cycles plus 0.14 cycles per flip.

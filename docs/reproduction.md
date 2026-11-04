@@ -33,6 +33,52 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | `data/` | Download and verification of the benchmark instances. |
 | `figures/` | Figures shown in the README. |
 
+## Checking the paper's tables and figures
+
+`reproduce.py` checks each table and figure against the repository, using the paper's names. Run `python data/fetch_data.py` first.
+
+```bash
+python reproduce.py --list            # table1 to table9, figure1 to figure6
+python reproduce.py table2 figure3    # one or more targets
+python reproduce.py all               # everything except the Lean build
+python reproduce.py table1 --long     # also builds the Lean proofs
+```
+
+Each output line states how its value was checked:
+
+| Status | Meaning |
+|---|---|
+| `RERUN` | Computed again on this machine (the Figure 5 simulation and the proofs) |
+| `REPLOT` | Plotted again from stored data |
+| `DERIVED` | Calculated from stored measurements with the paper's formula |
+| `STORED` | Read from a stored result file, not measured again |
+| `REPORT` | Found in a stored report, not measured again |
+| `NOSRC` | Stated in the paper, but not recorded in this repository |
+| `FAIL` | Differs from the paper by more than its printed rounding |
+
+Measured values need the V80, the GH200 or the ASIC flow, so they are compared with the paper rather than measured again. The columns of Table 4 for other machines are quoted from their publications and are not checked. The values marked `NOSRC` are the LUT and BRAM counts of v2 in Table 3 and five rows of Table 7.
+
+## Names in the paper and in the records
+
+The result files predate the paper's names, so the same name can mean different things. The paper's names are the ones to use; folder names and record keys stay unchanged because protocols, hash records and scripts refer to them.
+
+| Paper (Table 3) | Records | Result folder in `fpga/v80_sca/results/` |
+|---|---|---|
+| v1 (HLS) | v4 | `hw_board_300mhz` |
+| v2 (HLS) | v5 | `hw_board_v5_250mhz` |
+| v3 (HLS) | v5.3 | `hwm_board_v53_e3_225mhz` |
+| v4 (RTL) | v6, v6.1 | `hwv6_board_v6_e9_300mhz` |
+| v5 (RTL) | v6.2 | `hwv6_board_v62_e12_275mhz` |
+| v6 (RTL) | v6.4, v6.4b | `hwv6_board_v64_e12_250mhz` |
+| v7 (K = 2) | mb2n | `multibit_20261007/board/board_mb2n_e12_250mhz` |
+| v7 (K = 4) | mb4b | `multibit_20261007/board/board_mb4b_e6_225mhz` |
+
+| Paper (Table 2) | O1 | O2 | O3 | O4 | O5 | O6 | B1 | B2 | B3 | B4 | B5 | B6 | B7 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Board record key | X5 | O4 | X1 | X2 | X4 | O1 | T2 | B1 | P3 | T1 | SP_short | B2 | SP_long |
+
+`Snowball` in file names is the authors' earlier V80 design. The proofs (`coq/Snowball.v`, `SnowballFormal/`) and `fpga/v80_snowball/data/`, where `fetch_data.py` places K2000, keep that name.
+
 ## Paper results and their code
 
 | Paper | Source |
@@ -44,9 +90,9 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | Stability predictions for the correction | `research/theory_ideas_20261003/` (`a2.py`, `PROTOCOL_A2.md`) |
 | Figure 4 and the engine design | `fpga/v80_sca/src/v6/`, `fpga/v80_sca/DESIGN.md` |
 | Tables 2 and 3 (board TTS99, design evolution) | `fpga/v80_sca/` (`RESULTS_HW.md`, `RESULTS_MULTIBIT.md`, `PROTOCOL_HW*.md`, `results/`) |
-| Figure 5 (flips per step) | `research/algorithm_compare_20261007/flips_profile_v2c.py` |
+| Figure 5 (flips per step) | `research/algorithm_compare_20261007/flips_profile_v2c.py`, with `OMP_NUM_THREADS=6` (under a minute; with the default thread count on a 16-core machine it did not finish in 10 minutes) |
 | Tables 4 and 5 (Anechoic on FPGA, GPU and ASIC) | `fpga/v80_sca/`, `gpu/onsager_v2_20261007/` (`REPORT.md`), `asic/gf22_engine_v64_1p25_20261007/results/` |
-| Table 6 (FPGA resources) | `fpga/v80_sca/RESULTS_HW.md` (final v6.4 section) |
+| Table 6 (FPGA resources) | `fpga/v80_sca/RESULTS_HW.md` (final section, titled v6.4 there; v6 in the paper) |
 | Figure 6, Table 7 and the ASIC results | `asic/` (RTL, regression, derived totals). The layout figure is [`figures/asic-layout.png`](../figures/asic-layout.png). |
 | Table 8 (G-set, measured) | `fpga/v80_sca/RESULTS_MULTIBIT.md` and `PROTOCOL_HW_MB_A3*`, `research/gset_20261007/`, `research/fairness_audit_20261008/gset/` |
 | Table 9 (software benchmarks) | `research/reaim_benchmarks_20261008/` (`run_a5*.py`, `analyze_a5.py`, `table8b_a5.md`) |
@@ -62,7 +108,7 @@ The V80 builds run from `fpga/v80_sca/scripts/` and need AMD Vivado/Vitis 2025.1
 
 ## RTL regressions
 
-`asic/gf22_engine_v64_1p25_20261007/scripts/questa_rtl_regression.sh` compares the unmodified v6.4b engine with the 1.25 GHz ASIC variant on all vector sets, using Siemens Questa. Set the paths for your environment. The vectors come from `scripts/gen_vectors_x5.cpp` and `orig/gen_vectors.cpp`.
+`asic/gf22_engine_v64_1p25_20261007/scripts/questa_rtl_regression.sh` compares the unmodified v6 engine with the 1.25 GHz ASIC variant on all vector sets, using Siemens Questa. Set the paths for your environment. The vectors come from `scripts/gen_vectors_x5.cpp` and `orig/gen_vectors.cpp`.
 
 ## Proofs
 
