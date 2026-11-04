@@ -31,7 +31,6 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | `research/gset_20261007/` | G-set study with the engine's model. |
 | `research/reaim_benchmarks_20261008/` | Max-Cut, graph partitioning and TSP benchmarks in software. |
 | `research/optimum_mitigation_20261007/` | Study at the best-known K2000 cut. |
-| `paper/` | LaTeX source of the preprint. |
 | `data/` | Download and verification of the benchmark instances. |
 | `figures/` | Figures shown in the README. |
 
