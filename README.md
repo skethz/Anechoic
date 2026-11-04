@@ -79,7 +79,7 @@ mkdir -p outputs
 
 # Golden model: the bias-capable reference equals the base model bit for bit.
 c++ -O2 -std=c++17 -DSCA_LANES=256 fpga/v80_sca/src/test_ref_bias.cpp -o outputs/test_ref_bias
-outputs/test_ref_bias fpga/v80_snowball/data/K2000.bin   # 16 of 16 checks passed
+outputs/test_ref_bias data/k2000/K2000.bin   # 16 of 16 checks passed
 
 # Baselines: self-test of the published-settings implementations.
 python research/fairness_audit_20261008/k2000_pub/pub_methods.py   # pub_methods selftest OK
@@ -221,7 +221,7 @@ The [reproduction guide](docs/reproduction.md) maps every paper figure and table
 
 ```bash
 cd research/formal_verification_20261007/coq
-coqc Snowball.v && coqchk -silent -o -R . "" Snowball
+coqc Anechoic.v && coqchk -silent -o -R . "" Anechoic
 ```
 
 Per-trial records, spin states, and traces are not included because of their size. The summaries, and the scripts that produced them, are included.

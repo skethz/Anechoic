@@ -23,7 +23,7 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | `asic/gf22_engine_v64_mb_20261008/` | Multi-bit ASIC variant (K = 2 and K = 4) with bias. |
 | `research/dmft_sca_20261004/` | Dynamical mean-field theory of synchronous SCA. |
 | `research/headline_echo_20261009/` | Echo statistics and plot of Figure 1. |
-| `research/formal_verification_20261007/` | Lean 4/Mathlib (`SnowballFormal/`) and Rocq (`coq/`) proofs. |
+| `research/formal_verification_20261007/` | Lean 4/Mathlib (`AnechoicFormal/`) and Rocq (`coq/`) proofs. |
 | `research/algorithm_compare_20261007/`, `ablation_20261005/`, `theory_ideas_20261003/`, `iamp_evaluation_20261003/`, `statica_reproduction_20261003/`, `reaim_reproduction_20261003/` | The corrected update rules, the re-implemented baselines and their studies. |
 | `research/fairness_audit_20261008/` | Comparison at the baselines' published settings (`k2000_pub/`), G-set speed-ups (`gset/`) and hardware tables (`hw_table2/`). |
 | `research/v6_schedule_20261006/` | Schedule selection for the board configurations. |
@@ -56,7 +56,7 @@ Each output line states how its value was checked:
 | `NOSRC` | Stated in the paper, but not recorded in this repository |
 | `FAIL` | Differs from the paper by more than its printed rounding |
 
-Measured values need the V80, the GH200 or the ASIC flow, so they are compared with the paper rather than measured again. The columns of Table 4 for other machines are quoted from their publications and are not checked. The values marked `NOSRC` are the LUT and BRAM counts of v2 in Table 3 and five rows of Table 7.
+Measured values need the V80, the GH200 or the ASIC flow, so they are compared with the paper rather than measured again. The columns of Table 4 for other machines are quoted from their publications and are not checked.
 
 ## Names in the paper and in the records
 
@@ -77,7 +77,7 @@ The result files predate the paper's names, so the same name can mean different 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Board record key | X5 | O4 | X1 | X2 | X4 | O1 | T2 | B1 | P3 | T1 | SP_short | B2 | SP_long |
 
-`Snowball` in file names is the authors' earlier V80 design. The proofs (`coq/Snowball.v`, `SnowballFormal/`) and `fpga/v80_snowball/data/`, where `fetch_data.py` places K2000, keep that name.
+`Snowball` is the authors' earlier V80 design. The name remains in records and in the FPGA scripts, which name that design's paths and files. `fetch_data.py` places K2000 in `data/k2000/` and links `fpga/v80_snowball/data` to it, because scripts under frozen protocols read that path and their hashes are on record.
 
 ## Paper results and their code
 
@@ -113,8 +113,8 @@ The V80 builds run from `fpga/v80_sca/scripts/` and need AMD Vivado/Vitis 2025.1
 ## Proofs
 
 - Statements and results: [`research/formal_verification_20261007/README.md`](../research/formal_verification_20261007/README.md) and `SPEC.md`.
-- Rocq: `cd research/formal_verification_20261007/coq && coqc Snowball.v && coqchk -silent -o -R . "" Snowball`
-- Lean: `cd research/formal_verification_20261007/SnowballFormal && lake exe cache get && lake build && lake env lean Axioms.lean`
+- Rocq: `cd research/formal_verification_20261007/coq && coqc Anechoic.v && coqchk -silent -o -R . "" Anechoic`
+- Lean: `cd research/formal_verification_20261007/AnechoicFormal && lake exe cache get && lake build && lake env lean Axioms.lean`
 
 ## Release notes
 

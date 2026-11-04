@@ -2,7 +2,7 @@
 
 The statements are in [SPEC.md](SPEC.md). Each one is proved **independently** in both systems:
 
-| Statement | Lean (`SnowballFormal/SnowballFormal/Basic.lean`) | Coq (`coq/Snowball.v`) |
+| Statement | Lean (`AnechoicFormal/AnechoicFormal/Basic.lean`) | Coq (`coq/Anechoic.v`) |
 |---|---|---|
 | F1 rule equivalence | `F1_rule_equiv_plus/minus` | `F1_rule_equiv_plus/minus` |
 | F2 linear-band response (derivative 1/2T inside, 0 outside; summed response n_lin/2T; E[s′] = f) | `F2a_deriv_inside`, `F2b_deriv_outside`, `F2_dresp_is_derivative`, `F2c_summed_response`, `F2_expected_spin` (Mathlib `HasDerivAt`) | same names (Stdlib `derivable_pt_lim`, ε–δ) |
@@ -14,7 +14,7 @@ The statements are in [SPEC.md](SPEC.md). Each one is proved **independently** i
 
 **Results.**
 - **No unproved steps.** Neither development contains `sorry`, `admit`, `Admitted` or a user axiom.
-- **Lean:** `lake build` succeeds. `#print axioms` (`SnowballFormal/Axioms.lean`) lists only Lean's standard axioms `propext`, `Quot.sound` and `Classical.choice`. F5 needs no `Classical.choice`.
+- **Lean:** `lake build` succeeds. `#print axioms` (`AnechoicFormal/Axioms.lean`) lists only Lean's standard axioms `propext`, `Quot.sound` and `Classical.choice`. F5 needs no `Classical.choice`.
 - **Coq:** `coqc` and the independent kernel checker `coqchk` pass. `Print Assumptions` lists only the Stdlib axioms of the classical real numbers (`ClassicalDedekindReals.sig_forall_dec`/`sig_not_dec`) and functional extensionality. F5 and F6 are closed: they depend on no axiom.
 
 **Not formalised.** The large-N dynamical mean-field derivation (generating functional and saddle point) is not formalised. That derivation identifies the echo coefficient with the lag-one response G(t, t−1). What is formalised:
@@ -24,6 +24,6 @@ The statements are in [SPEC.md](SPEC.md). Each one is proved **independently** i
 - the hardware identities.
 
 **How to re-check.**
-- Coq: `cd coq && coqc Snowball.v && coqchk -silent -o -R . "" Snowball`.
-- Lean: `cd SnowballFormal && lake exe cache get && lake build && lake env lean Axioms.lean`.
+- Coq: `cd coq && coqc Anechoic.v && coqchk -silent -o -R . "" Anechoic`.
+- Lean: `cd AnechoicFormal && lake exe cache get && lake build && lake env lean Axioms.lean`.
 - Toolchains: Rocq 9.3.0 (Homebrew), Lean `v4.35.0-rc4` with Mathlib (from `lean-toolchain`/`lake-manifest.json`).

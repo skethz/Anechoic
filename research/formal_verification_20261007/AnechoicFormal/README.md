@@ -1,4 +1,4 @@
-# SnowballFormal
+# AnechoicFormal
 
 ## GitHub configuration
 

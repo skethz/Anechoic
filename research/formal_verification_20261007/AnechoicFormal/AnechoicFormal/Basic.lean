@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# Machine-checked statements behind the Snowball paper
+# Machine-checked statements behind the Anechoic paper
 
 See `../../SPEC.md`. F1 rule equivalence, F2 linear-band response, F3 units,
 F4 q_eff identity, F5 popcount field update, F6 residue banking, F7 cut-energy identity.
@@ -9,7 +9,7 @@ F4 q_eff identity, F5 popcount field update, F6 residue banking, F7 cut-energy i
 
 open Filter Topology
 
-namespace Snowball
+namespace Anechoic
 
 /-- clamp `x` to `[a, b]` -/
 noncomputable def clamp (x a b : ℝ) : ℝ := max a (min x b)
@@ -204,4 +204,4 @@ theorem F7_edge_contribution {si sj : ℝ} (hi : si = 1 ∨ si = -1) (hj : sj = 
     (1 - si * sj) / 2 = if si = sj then 0 else 1 := by
   rcases hi with rfl | rfl <;> rcases hj with rfl | rfl <;> norm_num
 
-end Snowball
+end Anechoic

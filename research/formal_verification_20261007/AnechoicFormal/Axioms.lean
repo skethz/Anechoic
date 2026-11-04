@@ -1,5 +1,5 @@
-import SnowballFormal.Basic
-open Snowball
+import AnechoicFormal.Basic
+open Anechoic
 #print axioms F1_rule_equiv_plus
 #print axioms F1_rule_equiv_minus
 #print axioms F2_dresp_is_derivative

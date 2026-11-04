@@ -37,6 +37,7 @@ V6_POWER = f'{FPGA}/power_board_v64_e12_250mhz_20261007T031120Z'
 BOARD = f'{FPGA}/multibit_20261007/board'
 GPU = 'gpu/onsager_v2_20261007'
 ASIC = 'asic/gf22_engine_v64_1p25_20261007/results/derived_postroute_1p25GHz.txt'
+ASIC_AGG = 'asic/gf22_engine_v64_1p25_20261007/results/postroute_aggregates.txt'
 RES_HW = 'fpga/v80_sca/RESULTS_HW.md'
 RES_MB = 'fpga/v80_sca/RESULTS_MULTIBIT.md'
 ALG = 'research/algorithm_compare_20261007'
@@ -169,11 +170,11 @@ def table1(a):
         line('REPORT' if re.search(rf'\b{f}\b', spec) else 'FAIL', f'Statement {f} listed', '', '', 'SPEC.md')
     coq = 'research/formal_verification_20261007/coq'
     if shutil.which('coqc'):
-        if run('Rocq: statements compile', ['coqc', 'Snowball.v'], cwd=coq):
-            run('Rocq: independent checker', ['coqchk', '-silent', '-o', '-R', '.', '', 'Snowball'], cwd=coq)
+        if run('Rocq: statements compile', ['coqc', 'Anechoic.v'], cwd=coq):
+            run('Rocq: independent checker', ['coqchk', '-silent', '-o', '-R', '.', '', 'Anechoic'], cwd=coq)
     else:
         print('  Rocq is not installed: its proofs were not checked.')
-    lean = 'research/formal_verification_20261007/SnowballFormal'
+    lean = 'research/formal_verification_20261007/AnechoicFormal'
     if a.long and shutil.which('lake'):
         run('Lean: fetch Mathlib', ['lake', 'exe', 'cache', 'get'], cwd=lean)
         run('Lean: build', ['lake', 'build'], cwd=lean)
@@ -222,7 +223,9 @@ def table3(a):
     num('STORED', 'v4 and v5 cyc/flip', 0.27, model['a'], 2)
     report('v6 cyc/step, cyc/flip', '18.1, 0.14', r'0\.1424·flips \+ 18\.09·S', RES_HW)
     report('v1 LUT, BRAM', '0.20 M, 141', r'200k LUT \(7\.8%\), 227k FF \(4\.4%\), 140\.5 BRAM', RES_HW)
-    nosrc('v2 LUT, BRAM', '0.27 M, 269')
+    u = text(f'{F}/hw_board_v5_250mhz/utilization_summary.txt')
+    num('STORED', 'v2 LUT [M]', 0.27, int(re.search(r'CLB LUTs\s+([\d,]+)', u).group(1).replace(',', '')) / 1e6, 2, 'utilization_summary.txt')
+    num('STORED', 'v2 BRAM', 269, float(re.search(r'Block RAM Tile\s+([\d.]+)', u).group(1)), 0)
     report('v3 LUT, BRAM', '1.05 M, 890', r'1\.05M LUT \(40\.6%\), 1\.11M FF \(21\.6%\), 890 BRAM', RES_HW)
     report('v4 LUT, BRAM', '1.27 M, 2,489', r'1\.27M LUT \(49%\), 1\.29M FF \(25%\), 2,488\.5 BRAM', RES_HW)
     report('v5 LUT, BRAM', '1.68 M, 3,318', r'1\.68M LUT \(65%\), 1\.71M FF \(33%\), 3,318 BRAM', RES_HW)
@@ -299,10 +302,18 @@ def table7(a):
     num('STORED', 'Die area [mm2]', 3.60, float(re.search(r'A_engine = ([\d.]+) mm2', t).group(1)), 2)
     num('STORED', 'Power [mW]', 1660, float(re.search(r'P_engine = ([\d.]+) mW', t).group(1)), 0)
     num('STORED', 'Energy per trial (O1) [uJ]', 16.4, float(re.search(r'X5 \(board mean\).*?E_trial ([\d.]+) uJ', t).group(1)), 1)
-    for name, v in [('Die size [mm]', '2.23 x 1.62'), ('Cell area: SRAM / logic [mm2]', '2.05 / 0.62'),
-                    ('Cells / flip-flops (clock-gated)', '866 k / 162 k (29%)'), ('Leakage [mW]', '6'),
-                    ('SRAM energy per applied flip [nJ]', '0.15')]:
-        nosrc(name, v)
+    g = text(ASIC_AGG)
+    val = lambda pattern: float(re.search(pattern, g).group(1))
+    num('STORED', 'Die width [mm]', 2.23, val(r'die_um ([\d.]+)') / 1000, 2, 'postroute_aggregates.txt')
+    num('STORED', 'Die height [mm]', 1.62, val(r'die_um [\d.]+ x ([\d.]+)') / 1000, 2)
+    num('STORED', 'Cell area: SRAM [mm2]', 2.05, val(r'sram_area_mm2 ([\d.]+)'), 2)
+    num('STORED', 'Cell area: logic [mm2]', 0.62, val(r'standard_cell_area_um2 ([\d.]+)') / 1e6, 2)
+    num('STORED', 'Cells [k]', 866, val(r'standard_cells (\d+)') / 1000, 0)
+    ffs = val(r'flip_flops (\d+)')
+    num('STORED', 'Flip-flops [k]', 162, ffs / 1000, 0)
+    num('DERIVED', 'Clock-gated flip-flops [%]', 29, 100 * val(r'clock_gated_flip_flops (\d+)') / ffs, 0)
+    num('STORED', 'Leakage [mW]', 6, val(r'leakage ([\d.]+)'), 0)
+    num('DERIVED', 'SRAM energy per applied flip [nJ]', 0.15, val(r'sram ([\d.]+)') * val(r'time_us ([\d.]+)') / val(r'flips (\d+)'), 2, 'SRAM power x trial time / flips')
 
 
 def table8(a):

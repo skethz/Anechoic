@@ -1,0 +1,11 @@
+# Aggregate values of the routed 1.25 GHz engine (Table 7). Reports and kit files stay on the ASIC servers.
+die_um 2225.08 x 1616.56
+standard_cells 866016
+standard_cell_area_um2 619375.8
+sram_macros 130
+sram_bits 4767744
+sram_area_mm2 2.046
+flip_flops 161932
+clock_gated_flip_flops 46457
+power_mW_O1 total 1660 leakage 5.987 sram 701.7
+trial_O1 time_us 9.897 flips 47446

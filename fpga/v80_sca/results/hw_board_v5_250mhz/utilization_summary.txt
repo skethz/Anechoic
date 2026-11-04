@@ -1,0 +1,4 @@
+# Totals of the routed utilization report of board_v5_250mhz (v2 in the paper), including the shell.
+CLB LUTs        273,782 of 2,574,208 (10.64%)
+Block RAM Tile  268.5 of 3,741 (7.18%)
+URAM            4 of 1,925 (0.21%)

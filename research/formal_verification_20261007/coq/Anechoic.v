@@ -1,4 +1,4 @@
-(* Machine-checked statements behind the Snowball paper (see ../SPEC.md). Rocq 9.3 + Stdlib.
+(* Machine-checked statements behind the Anechoic paper (see ../SPEC.md). Rocq 9.3 + Stdlib.
    F1 rule equivalence, F2 linear-band response, F3 units, F4 q_eff identity,
    F5 popcount field update, F6 residue banking, F7 cut-energy identity. *)
 From Stdlib Require Import Reals Lra Psatz ZArith Lia List.

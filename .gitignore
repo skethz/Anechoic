@@ -4,7 +4,8 @@ __pycache__/
 .lake/
 *.vvp
 *.hex
-fpga/v80_snowball/data/
+data/k2000/
+fpga/v80_snowball/
 research/gset_20261007/data/
 research/reaim_benchmarks_20261008/data/tsplib/
 .venv/

@@ -1,4 +1,4 @@
-# Machine-checked statements behind the Snowball paper (Lean 4/Mathlib and Coq)
+# Machine-checked statements behind the Anechoic paper (Lean 4/Mathlib and Coq)
 
 7 October 2026. Every statement below is proved twice, independently, in `lean/` and in `coq/`.
 

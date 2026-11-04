@@ -55,12 +55,17 @@ def k2000_bin(rud):
 
 
 def k2000():
-    d = ROOT / 'fpga' / 'v80_snowball' / 'data'
+    d = ROOT / 'data' / 'k2000'
     packed = k2000_bin(fetch(K2000_URL, K2000_SHA256, d / 'WK2000_1.rud'))
     if sha256(packed) != K2000_BIN_SHA256:
         raise SystemExit('K2000.bin: conversion does not reproduce the file used in the experiments')
     (d / 'K2000.bin').write_bytes(packed)
     print('built   ', (d / 'K2000.bin').relative_to(ROOT))
+    # Scripts under frozen protocols read K2000 from this path, and their hashes are on record.
+    link = ROOT / 'fpga' / 'v80_snowball' / 'data'
+    link.parent.mkdir(exist_ok=True)
+    if not link.is_symlink():
+        link.symlink_to(Path('..') / '..' / 'data' / 'k2000')
 
 
 def gset():
