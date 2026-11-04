@@ -50,7 +50,7 @@ This replaces nothing. The earlier, weaker GPU kernel ([../onsager_20261005/REPO
 
 **Tables.** Per-step tables are built by `src/tables.hpp`, which is the V80 host code (`host_sca_multi_v6.cpp`: geometric T, λ ramp, `make_tables`, TEC-T override) copied verbatim.
 
-**Development record.** `src/sca_gpu_v0_dev.cu`, `_v1_dev`, `_v2_dev` are preserved.
+**Development record.** `src/sca_gpu_v0_dev.cu`, `_v1_dev`, `_v2_dev` are in the Git history.
 - v0 (CTA barrier and ballot packing) ran X5 in about 1.2 µs per step for a single cluster.
 - The final kernel removes the barrier, packs with one shuffle level, uses 8 independent BMMA accumulator chains and overlaps the RNG with the message flight. No kernel spills registers (192–246 registers per thread).
 
@@ -233,8 +233,7 @@ Power was not measured separately for X4. At the same load level its secondary T
 **Source** (`src/`):
 - `sca_gpu.cu` (kernels and runner), `check_ref.cpp` (CPU checker);
 - `tables.hpp` (V80 host table code, verbatim), `sca_ref.hpp` (unchanged);
-- `analyze.py` (Amendment 1), `make_tables.py`, `run_protocol.sh`, `build.sh`;
-- development versions `sca_gpu_v{0,1,2}_dev.cu`.
+- `analyze.py` (Amendment 1), `make_tables.py`, `run_protocol.sh`, `build.sh`.
 
 **Protocol.** `PROTOCOL.md`, `PROTOCOL.sha256`, `PROTOCOL_A1.sha256`.
 

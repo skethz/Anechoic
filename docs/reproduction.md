@@ -20,7 +20,6 @@ This guide maps the paper to the repository. Folder names carry the date of each
 | `gpu/onsager_v2_20261007/` | Bit-exact kernel for the NVIDIA GH200 (`src/sca_gpu.cu`), with protocol, report and result tables. |
 | `gpu/multibit_bias_20261008/` | GPU kernel with multi-bit couplings and bias, with its G-set results. |
 | `asic/gf22_engine_v64_1p25_20261007/` | ASIC variant of the v6 engine at 1.25 GHz. RTL in `rtl/`; source RTL and golden model in `orig/`; RTL regression in `sim/` and `scripts/`; derived 12-engine totals in `results/`. |
-| `asic/gf22_engine_v64_20261007/` | The same, 1 GHz variant. |
 | `asic/gf22_engine_v64_mb_20261008/` | Multi-bit ASIC variant (K = 2 and K = 4) with bias. |
 | `research/dmft_sca_20261004/` | Dynamical mean-field theory of synchronous SCA. |
 | `research/headline_echo_20261009/` | Echo statistics and plot of Figure 1. |
@@ -76,7 +75,7 @@ The V80 builds run from `fpga/v80_sca/scripts/` and need AMD Vivado/Vitis 2025.1
 - **Placeholders.** The experiments ran on the authors' servers. For publication, user names, host names, local paths and device identifiers were replaced by placeholders: `/scratch/USER`, `gpu-host`, `fpga-host` and `GPU-xxxxxxxx-…`. Set them for your environment.
 - **Hash records.** The SHA-256 records of the frozen protocols and inputs (`*.sha256`, `SHA256SUMS*.txt`) refer to the unredacted originals. The self-test in `research/fairness_audit_20261008/k2000_pub/pub_methods.py` checks the published files.
 - **Protocol gates.** The V80 bring-up and run scripts (`fpga/v80_sca/scripts/bringup_*.sh`, `run_hw_v6_a5.sh`) stop unless the frozen protocol files match their records. In this release that check fails, because paths were replaced and some inputs are not included. Regenerate the records for your setup, or remove the check.
-- **Removed from this release.** Unreferenced exploratory scripts, an earlier board power run and unused variants of Figure 3 were removed. They remain in the Git history.
+- **Removed from this release.** Unreferenced exploratory scripts, an earlier board power run and unused variants of Figure 3 were removed. Superseded benchmark amendments, intermediate GPU and FPGA kernels and their results, and the 1 GHz ASIC variant were removed as well. All of them remain in the Git history. Frozen protocols, hash records and earlier reports are unchanged, so they can name files that are now only in the history.
 - **Superseded documents.** Some reports in the study folders were written before the final measurements. Each carries a dated note at the top that gives the final values and their source.
 - **Raw data.** Per-trial records, spin states and traces are not included because of their size. The summaries, and the scripts that produced them, are included.
 - **ASIC.** The ASIC folders contain the RTL, its regression against the golden model and the derived totals. Synthesis and place-and-route scripts and reports are not included, because they depend on a foundry design kit under a non-disclosure agreement.
