@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Derive rtl/sca_core_asic.v (ASIC memories) from the unmodified v6.4b RTL (orig/sca_core_v64b.v).
+"""Derive rtl/sca_core_asic.v (ASIC memories) from the unmodified v6.4b RTL (fpga/v80_sca/src/v6/sca_core.v).
 Every edit is an exact, asserted string replacement; all non-memory logic is left as is."""
 import re
 import sys

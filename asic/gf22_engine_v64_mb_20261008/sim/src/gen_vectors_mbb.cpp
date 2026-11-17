@@ -1,5 +1,5 @@
 // Stream-level test vectors for the multi-bit ASIC core with bias and runtime n (rtl/sca_core_mb_asic.v).
-// Copy of the FPGA gen_vectors_mb.cpp (orig/, unchanged suites and expected outputs from sca_ref.hpp run_trial(..., dense)
+// Copy of the FPGA gen_vectors_mb.cpp (fpga/v80_sca/src/v6/, unchanged suites and expected outputs from sca_ref.hpp run_trial(..., dense)
 // for b = 0) plus a "bias" suite whose expected outputs come from sca_ref_bias.hpp run_trial_bias(n, dense, bias, ...).
 // Build: c++ -O2 -std=c++17 -DSCA_LANES=256 gen_vectors_mbb.cpp -o gen_vectors_mbb
 // Usage: gen_vectors_mbb <K> <matrix> <outdir> [suite [case]]

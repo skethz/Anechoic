@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Derive rtl/sca_core_mb_asic.v from the unmodified multi-bit FPGA core orig/sca_core_mb_r2.v (MULTIBIT_SPEC.md):
+"""Derive rtl/sca_core_mb_asic.v from the unmodified multi-bit FPGA core fpga/v80_sca/src/v6/sca_core_mb_r2.v (fpga/v80_sca/MULTIBIT_SPEC.md):
 ASIC memories in the 1.25 GHz organisation of the v6.4b ASIC (single-copy residue banks as 256 x 128 single-port SRAM
 macros, two-cycle step-table read), plus the external-field bias (2048 x int16 bias memory, biased field initialisation),
 a runtime number of active spins n (sca_ref_bias.hpp run_trial_bias) and a raw-score output mode.
 Every edit is an exact, asserted string replacement; the decision/field-update datapath is the sca_core_mb_r2.v text
 except for the field width parameters and the field register's bias-load input.
-Usage: make_mb_asic_rtl.py orig/sca_core_mb_r2.v rtl/sca_core_mb_asic.v"""
+Usage: make_mb_asic_rtl.py fpga/v80_sca/src/v6/sca_core_mb_r2.v rtl/sca_core_mb_asic.v"""
 import re
 import sys
 
