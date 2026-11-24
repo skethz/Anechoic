@@ -1,0 +1,78 @@
+{
+  "steps": 21400,
+  "target": 33337,
+  "physical_engines": 12,
+  "mhz": 249.99999975,
+  "same_gh200_endpoint_vectors": 120000,
+  "same_final_cuts_and_flip_counts": 120000,
+  "trajectory_hits": 1818,
+  "block_endpoint_sha256": [
+    "8c81aa4296552364bf0a33209d543197d9175f2f80ecf5f4089a26ba6d5f68ab",
+    "4b83092915ec0f51ff7b0b5e4976e54b5373b85a88390af29d5701d49dccc6ca",
+    "02837c5792bd676c4eb05779c81bd1dea0cd220c34d784cd2964cfcf693e367d",
+    "0fc940ee57e9c5dde71a391ec0f5ed79e5d09ca74b351668c77c87f651ca5740"
+  ],
+  "v80_native_12_first1000": {
+    "successes": 169,
+    "n": 1000,
+    "success_fraction": 0.169,
+    "binomial_interval_95": [
+      0.14627448869354612,
+      0.19369274635644143
+    ],
+    "mean_device_ms": 3.6162258116162262,
+    "TTS99_ms": 89.95701144019199,
+    "integer_TTS99_ms": 90.40564529040566,
+    "mean_host_ms": 4.4345214980000005,
+    "host_TTS99_ms": 110.31288473356503
+  },
+  "v80_native_12_all10000": {
+    "successes": 1695,
+    "n": 10000,
+    "success_fraction": 0.1695,
+    "binomial_interval_95": [
+      0.16219339045807143,
+      0.17699961542610984
+    ],
+    "mean_device_ms": 3.616336049616336,
+    "TTS99_ms": 89.66823122492512,
+    "integer_TTS99_ms": 90.4084012404084,
+    "mean_host_ms": 4.436776757,
+    "host_TTS99_ms": 110.0113260166341
+  },
+  "v80_ten_waves_of_12": {
+    "successes": 843,
+    "n": 1000,
+    "success_fraction": 0.843,
+    "binomial_interval_95": [
+      0.8189474466391953,
+      0.8650123407930677
+    ],
+    "mean_device_ms": 36.163360496163364,
+    "TTS99_ms": 89.94738182744354,
+    "integer_TTS99_ms": 108.49008148849009,
+    "mean_host_ms": 44.368002324,
+    "host_TTS99_ms": 110.35439160531334
+  },
+  "gh200_native_120": {
+    "successes": 843,
+    "n": 1000,
+    "success_fraction": 0.843,
+    "binomial_interval_95": [
+      0.8189474466391953,
+      0.8650123407930677
+    ],
+    "mean_device_ms": 41.85896824669,
+    "TTS99_ms": 104.11379219548212,
+    "integer_TTS99_ms": 125.57690474006999,
+    "mean_host_ms": 41.876330331999995,
+    "host_TTS99_ms": 104.15697607262388
+  },
+  "programmed_pdi_sha256": "238dabff024fdaf20699aa5f3605197c9596974f3d525a09cdd9ef3b64998348",
+  "build_hashes": {
+    "timing_signoff": "1a6c2166952349b4115fc23024b0c6b5ff4b6d92417c691538103fa200efe080",
+    "timer_structure": "815e877cc2d4d12ea93936ae699e7eae316888c10becce290c5f847caa5b9efb",
+    "routed_timing": "ed0c3236c7dd27a9aaa3961fc008e854c8117c4d29a2b055b63e94a91d39abdd",
+    "pdi": "238dabff024fdaf20699aa5f3605197c9596974f3d525a09cdd9ef3b64998348"
+  }
+}

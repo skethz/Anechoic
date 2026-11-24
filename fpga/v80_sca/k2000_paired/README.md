@@ -8,6 +8,10 @@ We measured the time to reach a final signed K2000 cut of at least **33,337**. E
 | 3,650 | V80, 12 parallel starts | 297/10,000 | 0.62449 | 95.3851 |
 | 3,650 | V80, 10 consecutive launches of 12 | 258/1,000 | 6.24485 | 96.3741 |
 | 3,650 | GH200, 120 parallel starts | 258/1,000 | 5.95401 | 91.8856 |
+| 21,400 | V80, 12 parallel starts | 169/1,000 | 3.61623 | 89.9570 |
+| 21,400 | V80, 12 parallel starts | 1,695/10,000 | 3.61634 | 89.6682 |
+| 21,400 | V80, 10 consecutive launches of 12 | 843/1,000 | 36.16336 | 89.9474 |
+| 21,400 | GH200, 120 parallel starts | 843/1,000 | 41.85897 | 104.1138 |
 
 All 120,000 V80 endpoints at each schedule length matched their GH200 spin vectors, signed cut values and total flip counts. Each trajectory runs to the scheduled end. Both devices used seed 20261004. Request zero starts at trial 431100000 and every subsequent request advances by 120.
 

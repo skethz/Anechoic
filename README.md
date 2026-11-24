@@ -168,6 +168,8 @@ On the same GH200, each solver ran 1,000 requests of 120 chains with the same in
 
 At 3,650 steps on the same 120,000 initial states, Anechoic reached cut 33,337 in 258/1,000 rounds on both devices. V80 ran ten consecutive 12-engine launches per 120-chain round and measured **96.37 ms TTS₉₉**. GH200 ran 120 chains together and measured **91.89 ms**. [V80 cycle counters, endpoint files and verification](fpga/v80_sca/k2000_paired/README.md)
 
+At 21,400 steps, Anechoic reached 33,337 in **843/1,000** rounds on each device. All 120,000 final spin vectors matched. V80 averaged **36.16 ms per round (89.95 ms device TTS₉₉)** and GH200 averaged **41.86 ms (104.11 ms)**. Including host readout, TTS₉₉ was 110.35 ms on V80, which returned every endpoint, and 104.16 ms on GH200, which returned the winning endpoint. [Measured counters, host times and success counts](fpga/v80_sca/k2000_paired/records/21400/results.json)
+
 ### One engine on three platforms
 
 The same bit-exact engine on K2000, cut ≥ 33,000. The V80 and GH200 are measured; the ASIC is estimated.
