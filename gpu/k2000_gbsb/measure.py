@@ -9,7 +9,6 @@ import subprocess
 HERE = Path(__file__).resolve().parent
 FIRST = 431100000
 WIDTH = 120
-STEPS = 21400
 GRAPH_SHA256 = 'a3058db6cffdbb632bc46223958cc7f8dce17da22eb2e4bbed6f60f811e6c0e9'
 
 def main():
@@ -17,7 +16,9 @@ def main():
     parser.add_argument("graph", type=Path)
     parser.add_argument("output", type=Path, help="new directory for binaries, logs and measurements")
     parser.add_argument("--rounds", type=int, default=1000, help="1 to 1000 per algorithm")
+    parser.add_argument("--steps", type=int, choices=(1000, 3650, 21400), default=21400)
     args = parser.parse_args()
+    steps = args.steps
     graph, dest = args.graph.resolve(), args.output.resolve()
     if not 1 <= args.rounds <= 1000:
         parser.error("--rounds must be between 1 and 1000")
@@ -42,20 +43,21 @@ def main():
     base = (HERE / "base_schedule.bin").read_bytes()
     if len(base) != 3650*16: raise ValueError("base table length")
     table = dest / "schedule.bin"
-    table.write_bytes(b"".join(base[16*j:16*j+16] for j in (t*3649//21399 for t in range(STEPS))))
+    table.write_bytes(b"".join(base[16*j:16*j+16] for j in (t*3649//(steps-1) for t in range(steps))))
     for block, start in enumerate(range(0,args.rounds,250)):
         n = min(250,args.rounds-start)
         first = FIRST + start*WIDTH
         # The original wider experiment interleaved other settings. These are the
         # relative orders of the two reported configurations within its four blocks.
-        order = ("anechoic", "gbsb") if block in (0,2,3) else ("gbsb", "anechoic")
+        anechoic_first = block in (0, 2, 3) if steps == 21400 else block % 2 == 0
+        order = ("anechoic", "gbsb") if anechoic_first else ("gbsb", "anechoic")
         for name in order:
             d = dest / f"{name}_b{block}"
             if name == "anechoic":
-                run([an,graph,table,STEPS,0,WIDTH,n,first,d])
+                run([an,graph,table,steps,0,WIDTH,n,first,d])
             else:
                 d.mkdir()
-                run([gb,graph,first,n,d/"gb",STEPS,.196,1.25])
+                run([gb,graph,first,n,d/"gb",steps,.196,1.25])
 
 if __name__ == "__main__":
     main()

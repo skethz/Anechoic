@@ -1,0 +1,74 @@
+{
+  "algorithm": "gbsb",
+  "steps": 3650,
+  "blocks": [
+    {
+      "first_trial": 431100000,
+      "endpoints": 30000,
+      "gh200_before": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_after": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_spin_bytes": 7680000,
+      "gh200_spin_sha256": "122db5d6577a189b7bde8041fddf53a57009f12c5fb3aa9009c239acf6625039",
+      "endpoint_file": "records/3650/gbsb/endpoints_b0.bin.gz",
+      "v80_spin_bytes": 7680000,
+      "v80_spin_sha256": "122db5d6577a189b7bde8041fddf53a57009f12c5fb3aa9009c239acf6625039"
+    },
+    {
+      "first_trial": 431130000,
+      "endpoints": 30000,
+      "gh200_before": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_after": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_spin_bytes": 7680000,
+      "gh200_spin_sha256": "bba405ab8165fa7016120ed22c4e88f3d28690c05050bd90bd904d9a9c9ef4f3",
+      "endpoint_file": "records/3650/gbsb/endpoints_b1.bin.gz",
+      "v80_spin_bytes": 7680000,
+      "v80_spin_sha256": "bba405ab8165fa7016120ed22c4e88f3d28690c05050bd90bd904d9a9c9ef4f3"
+    },
+    {
+      "first_trial": 431160000,
+      "endpoints": 30000,
+      "gh200_before": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_after": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_spin_bytes": 7680000,
+      "gh200_spin_sha256": "d69d45d5701de51e258281f22f111c36accc1ab4df71ddd2d6b1dc234a1799f9",
+      "endpoint_file": "records/3650/gbsb/endpoints_b2.bin.gz",
+      "v80_spin_bytes": 7680000,
+      "v80_spin_sha256": "d69d45d5701de51e258281f22f111c36accc1ab4df71ddd2d6b1dc234a1799f9"
+    },
+    {
+      "first_trial": 431190000,
+      "endpoints": 30000,
+      "gh200_before": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_after": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139",
+      "gh200_spin_bytes": 7680000,
+      "gh200_spin_sha256": "4458cf9c2786ec320dec2885cccf5c4b1657ab6c3123227e58a5b64229067058",
+      "endpoint_file": "records/3650/gbsb/endpoints_b3.bin.gz",
+      "v80_spin_bytes": 7680000,
+      "v80_spin_sha256": "4458cf9c2786ec320dec2885cccf5c4b1657ab6c3123227e58a5b64229067058"
+    }
+  ],
+  "hardware": {
+    "GH200": {
+      "model": "NVIDIA GH200 144 GB HBM3e",
+      "same_device_id_verified_before_and_after_every_block": true,
+      "steps": 3650,
+      "block_order": [
+        "AG",
+        "GA",
+        "AG",
+        "GA"
+      ]
+    },
+    "V80": {
+      "model": "AMD Alveo V80",
+      "lifetime": "ten successive 12-chain launches per 120-start request",
+      "ip_instances": 1,
+      "trajectory_lanes": 12,
+      "clock_mhz": 249.99999975,
+      "pdi_sha256": "b752b3c9358c1cb2959ce441b48f1ce2c5949bca371dc5f7e10aa95c8af4a2dd",
+      "image_logic_uuid": "a67ee6e96be0b2a1fdd031195ddf7d3c",
+      "physical_records": "records/3650/gbsb",
+      "restoration_confirmed": true
+    }
+  }
+}

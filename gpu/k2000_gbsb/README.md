@@ -21,6 +21,10 @@ GbSB’s published K2000 result on an Intel Agilex 7 FPGA was 989 successes in 1
 - Events on the GPU timed initialization, annealing, final scoring and selection of the winner. The graph and schedule were already resident. Graph upload, warm-up, answer transfer to the host and diagnostic copies followed separate timing boundaries. The measurements were acquired on a shared GH200. The saved device times reflect its load during acquisition.
 - For measured request success fraction `p`, TTS₉₉ is the mean device time multiplied by `max(1, log(0.01)/log(1-p))`. All observed requests succeeding gives one request. Rounding the restart count up to an integer gives **125.577 ms** for Anechoic and **444.408 ms** for GbSB.
 
+### V80 and GH200 at both targets
+
+The paired study covers cut thresholds of 33,004 and 33,337 with 1,000, 3,650 and 21,400 steps per chain on each device. Set `--steps` when rerunning the GPU driver. Its default is 21,400. [Four-way results](../../fpga/v80_gbsb/TABLE.md) · [Reproduction and review](../../fpga/v80_gbsb/README.md)
+
 ### Recalculate and reproduce
 
 From the repository root, the first command recalculates both TTS values directly from the 1,000 paired rows with Python. The next two commands also check every endpoint against the signed graph. Python 3.10 or newer supports the integer population count used by the verifier.

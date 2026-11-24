@@ -162,11 +162,15 @@ Power comes from the toggle rates of one K2000 trial with schedule O1 in RTL sim
 
 Values of other machines are quoted from the cited publications, with their targets and conditions in Table 4 of the paper. All CMOS and ReRAM results are simulations. Anechoic uses Onsager-κT and the primary estimator: FPGA is an AMD Alveo V80 with 12 engines at 250 MHz, GPU is an NVIDIA GH200 with 120 chains, and CMOS is a simulation of 12 GlobalFoundries 22FDX engines routed at 1.25 GHz.
 
+### Matched V80 and GH200 comparison at both K2000 targets
+
+We ran both algorithms on the same V80 and on the same GH200 for 1,000 rounds of 120 matched starts at each of three horizons. At 21,400 steps and cut ≥33,337, device TTS₉₉ was **89.95 / 104.11 ms** for Anechoic (V80 / GH200) and **39,940.96 / 444.41 ms** for our GbSB port. Through host return, Anechoic took 110.35 ms on V80 (all endpoints) and 104.16 ms on GH200 (one winner). The original GbSB hardware achieved 9.61 ms at one trajectory per request on Intel Agilex 7. The table also gives cut ≥33,004 and native twelve-chain V80 results. [Four-way comparison](fpga/v80_gbsb/TABLE.md) · [Device records, code and independent checks](fpga/v80_gbsb/README.md)
+
 ### Matched GH200 comparison at cut 33,337
 
 On the same GH200, each solver ran 1,000 requests of 120 chains with the same initial spin signs and 21,400 steps per chain. Anechoic reached the target in **843/1,000 requests (104.11 ms TTS₉₉)** and our GbSB implementation in **1,000/1,000 (444.41 ms)**. Their mean device times per request were 41.86 and 444.41 ms, respectively. [Protocol, CUDA kernels, all 240,000 final states and verification instructions](gpu/k2000_gbsb/README.md)
 
-At 3,650 steps on the same 120,000 initial states, Anechoic reached cut 33,337 in 258/1,000 rounds on both devices. V80 ran ten consecutive 12-engine launches per 120-chain round and measured **96.37 ms TTS₉₉**. GH200 ran 120 chains together and measured **91.89 ms**. [V80 cycle counters, endpoint files and verification](fpga/v80_sca/k2000_paired/README.md)
+At 3,650 steps on the same 120,000 initial states, Anechoic reached cut 33,337 in 258/1,000 rounds on both devices. V80 ran ten consecutive 12-engine launches per 120-chain round and measured **96.37 ms TTS₉₉**. GH200 ran 120 chains together and measured **91.89 ms**. [V80 cycle counters, endpoint files and verification](fpga/v80_sca/k2000_paired/README.md) The later alternating-block acquisition on the same shared GH200 gave 61.11 ms for the same 258 successful rounds. [Both acquisitions](fpga/v80_gbsb/TABLE.md)
 
 At 21,400 steps, Anechoic reached 33,337 in **843/1,000** rounds on each device. All 120,000 final spin vectors matched. V80 averaged **36.16 ms per round (89.95 ms device TTS₉₉)** and GH200 averaged **41.86 ms (104.11 ms)**. Including host readout, TTS₉₉ was 110.35 ms on V80, which returned every endpoint, and 104.16 ms on GH200, which returned the winning endpoint. [Measured counters, host times and success counts](fpga/v80_sca/k2000_paired/records/21400/results.json)
 

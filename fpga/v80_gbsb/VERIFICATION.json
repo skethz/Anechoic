@@ -1,0 +1,79 @@
+{
+  "results_sha256": "dc155e6e34240c9dac548de648f806a1a07b42c594688628e5a142204da39096",
+  "verifier_sha256": "22ea09dbaa44488e2836ca6a661ba9b230beef0ebfe80d397794f559a658347c",
+  "prior_measurement_only_run": {
+    "command": [
+      "python3",
+      "fpga/v80_gbsb/verify.py",
+      "--measurements-only",
+      "--edges",
+      "data/k2000/WK2000_1.rud"
+    ],
+    "exit_status": 0,
+    "stdout": " 1000 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 1000 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n48 results verified\n",
+    "verifier_sha256": "22ea09dbaa44488e2836ca6a661ba9b230beef0ebfe80d397794f559a658347c"
+  },
+  "index_changes_after_board_return": [
+    {
+      "index": "records/1000/gbsb/index.json",
+      "before_sha256": "9d86976a00eeecf70a6dc748e8458fd51dae8fa45dd3476d31dfbad128f71605",
+      "after_sha256": "0d3f224a0697ce050efadcb2849125125e65f26d1da178bd7ce28c8a01a43403",
+      "json_patch": [
+        {
+          "op": "replace",
+          "path": "/hardware/V80/restoration_confirmed",
+          "value": true
+        }
+      ],
+      "prior_value": false
+    },
+    {
+      "index": "records/21400/gbsb/index.json",
+      "before_sha256": "3074805a6ea0e4738959f7423b2b44e31f790f234c25f76c786570044d439eb1",
+      "after_sha256": "8c8a45f41cb24f47691ea1fb657b14b99a8c8543f3e9165b4d3245876a730a9e",
+      "json_patch": [
+        {
+          "op": "replace",
+          "path": "/hardware/V80/restoration_confirmed",
+          "value": true
+        }
+      ],
+      "prior_value": false
+    },
+    {
+      "index": "records/3650/gbsb/index.json",
+      "before_sha256": "4d66d74f7f36dbaaa2c08e76a6318173950e303593d38615349e577768660fd0",
+      "after_sha256": "fdfebb10fec5984f23015c1505d56a4f6c653283f371b33a73ceb56a5a492b95",
+      "json_patch": [
+        {
+          "op": "replace",
+          "path": "/hardware/V80/restoration_confirmed",
+          "value": true
+        }
+      ],
+      "prior_value": false
+    }
+  ],
+  "board_session_exit_status": 0,
+  "original_image_restored": true,
+  "verification_runs": [
+    {
+      "command": [
+        "python3",
+        "fpga/v80_gbsb/verify.py"
+      ],
+      "exit_status": 0,
+      "stdout": " 1000 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 1000 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n48 results verified\n"
+    },
+    {
+      "command": [
+        "python3",
+        "fpga/v80_gbsb/verify.py",
+        "--edges",
+        "data/k2000/WK2000_1.rud"
+      ],
+      "exit_status": 0,
+      "stdout": " 1000 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 1000 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n 3650 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, anechoic: 120,000 paired endpoints and 1,000 request timings per device\n21400 steps, gbsb: 120,000 paired endpoints and 1,000 request timings per device\n48 results verified\n"
+    }
+  ]
+}

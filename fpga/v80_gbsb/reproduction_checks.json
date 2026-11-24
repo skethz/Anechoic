@@ -1,0 +1,17 @@
+{
+  "gpu_device": "NVIDIA GH200 144 GB HBM3e",
+  "gpu_check": "One fresh 120-chain request for each solver at each of three step counts, and 120000 paired initial sign vectors.",
+  "initial_signs_match": true,
+  "sha256_by_arm_step": {
+    "1000_anechoic": "c3855a6e165107d89682908c220bfa3e594c185794d66fcc3443358127d98fc7",
+    "21400_anechoic": "52dff2fb40a7d2a3584b8b5837cbfb2018c6d8decb121a465ceaeb33d5e6d838",
+    "3650_anechoic": "8b6ec14b29bc01607c9d91e69bf745458668768937380d164aadeff0050c7803",
+    "1000_gbsb": "a8023ce49c2df33a93f8bde70733bee8dbbea15938d85d9479c9e05828236033",
+    "21400_gbsb": "8ffe1deb390a4d769b965fab214b2f1f596c16e862b3eff1210cb4779784a8bf",
+    "3650_gbsb": "16d4e18c7cd5388f12d61cf9354cc54e854cd78c78071cc05670e092feab16cc"
+  },
+  "fpga_board_package_check": "Original passive-counter RTL and generated offset header reproduced byte for byte from the measured HLS IP in a fresh build directory. The published host compiled against the generated HLS, timer and AVED headers. The four-point CPU test exercised 48 states and cut scores. Physical execution belongs to the separate original acquisition.",
+  "counter_header_sha256": "475b938b1ec19ced609bd4cbee97b00f811ba47854d2fda183a9d20633d20774",
+  "counter_rtl_sha256": "ac82dd423d2aa7b86937d9396da612df2073a9c356fe04960ea56ab2c9fc0e39",
+  "gh200_instance_token": "85f470c7248eb3d892b4f58e406bd1937f1f1e50fe81a3baf806bb5e45dea139"
+}

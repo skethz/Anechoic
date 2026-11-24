@@ -1,0 +1,197 @@
+{
+  "anechoic": {
+    "measured_horizons": [
+      21400
+    ],
+    "ip_instances": 12,
+    "concurrent_chains": 12,
+    "logic_uuid": "bdd48927031236cfd6dcbd077b1b746e",
+    "pdi_sha256": "238dabff024fdaf20699aa5f3605197c9596974f3d525a09cdd9ef3b64998348",
+    "clock": {
+      "requested_mhz": 250,
+      "routed_period_ns": 4.0,
+      "actual_mhz": 249.99999975,
+      "clock": "clock_reset_clk_usr_0",
+      "frequency_source": "Configured nominal CIPS clock and routed MMCM dividers; not an external frequency measurement",
+      "input_mhz": 33.3333333,
+      "feedback_multiplier": 270.0,
+      "input_divider": 3,
+      "output_divider": 12
+    },
+    "routed_timing": {
+      "status": "PASS for constrained synchronous timing",
+      "setup_slack_ns": 0.032,
+      "hold_slack_ns": 0.01,
+      "pulse_width_slack_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "hold_failing_endpoints": 0,
+      "pulse_width_failing_endpoints": 0
+    },
+    "utilization_with_shell": {
+      "CLB LUTs": {
+        "used": 1906757,
+        "available": 2574208,
+        "percent": 74.07
+      },
+      "CLB Registers": {
+        "used": 1767297,
+        "available": 5148416,
+        "percent": 34.33
+      },
+      "Block RAM Tile": {
+        "used": 3318,
+        "available": 3741,
+        "percent": 88.69
+      },
+      "URAM": {
+        "used": 792,
+        "available": 1925,
+        "percent": 41.14
+      },
+      "DSP Slices": {
+        "used": 3384,
+        "available": 10848,
+        "percent": 31.19
+      }
+    },
+    "utilization_report_sha256": "29e58fa4e99de8ed17f2828e2c270b1157cab342aee8b452adb9a59a18a4cd83",
+    "route_report_sha256": "ed0c3236c7dd27a9aaa3961fc008e854c8117c4d29a2b055b63e94a91d39abdd",
+    "counter_structure": {
+      "engines": 12,
+      "running_bits": 64,
+      "completed_bits": 64,
+      "active_has_start_register_in_fanin": true
+    }
+  },
+  "gbsb": {
+    "measured_horizons": [
+      1000,
+      3650,
+      21400
+    ],
+    "ip_instances": 1,
+    "concurrent_chains": 12,
+    "logic_uuid": "a67ee6e96be0b2a1fdd031195ddf7d3c",
+    "pdi_sha256": "b752b3c9358c1cb2959ce441b48f1ce2c5949bca371dc5f7e10aa95c8af4a2dd",
+    "clock": {
+      "requested_mhz": 250,
+      "routed_period_ns": 4.0,
+      "actual_mhz": 249.99999975,
+      "clock": "clock_reset_clk_usr_0",
+      "frequency_source": "Configured nominal CIPS clock and routed MMCM dividers; not an external frequency measurement",
+      "input_mhz": 33.3333333,
+      "feedback_multiplier": 270.0,
+      "input_divider": 3,
+      "output_divider": 12
+    },
+    "routed_timing": {
+      "status": "PASS for constrained synchronous timing",
+      "setup_slack_ns": 0.002,
+      "hold_slack_ns": 0.015,
+      "pulse_width_slack_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "hold_failing_endpoints": 0,
+      "pulse_width_failing_endpoints": 0
+    },
+    "utilization_with_shell": {
+      "CLB LUTs": {
+        "used": 186166,
+        "available": 2574208,
+        "percent": 7.23
+      },
+      "CLB Registers": {
+        "used": 82556,
+        "available": 5148416,
+        "percent": 1.6
+      },
+      "Block RAM Tile": {
+        "used": 76.5,
+        "available": 3741,
+        "percent": 2.04
+      },
+      "URAM": {
+        "used": 16,
+        "available": 1925,
+        "percent": 0.83
+      },
+      "DSP Slices": {
+        "used": 215,
+        "available": 10848,
+        "percent": 1.98
+      }
+    },
+    "utilization_report_sha256": "01999c5899ff74ec9b3a32e2ab4d5581de0ee17a7a359d70ab7392f79a2f913c",
+    "route_report_sha256": "267ac92fb15faa59f9868e9f6697158c012bee3ff2a3f50b77cdd3e18023ee2b",
+    "counter_structure": {
+      "engines": 1,
+      "running_bits": 64,
+      "completed_bits": 64,
+      "active_has_start_register_in_fanin": true
+    }
+  },
+  "anechoic_short": {
+    "measured_horizons": [
+      1000,
+      3650
+    ],
+    "ip_instances": 12,
+    "concurrent_chains": 12,
+    "logic_uuid": "8669ad38a456bcdf17ad8485fa0cec7a",
+    "pdi_sha256": "67e591f351985531c3b8340f9c25bb80bc6add80c98e026ef26ca75f21f770b4",
+    "clock": {
+      "requested_mhz": 250,
+      "routed_period_ns": 4.0,
+      "actual_mhz": 249.99999975,
+      "clock": "clock_reset_clk_usr_0",
+      "frequency_source": "Configured nominal CIPS clock and routed MMCM dividers; not an external frequency measurement",
+      "input_mhz": 33.3333333,
+      "feedback_multiplier": 270.0,
+      "input_divider": 3,
+      "output_divider": 12
+    },
+    "routed_timing": {
+      "status": "PASS for constrained synchronous timing",
+      "setup_slack_ns": 0.022,
+      "hold_slack_ns": 0.01,
+      "pulse_width_slack_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "hold_failing_endpoints": 0,
+      "pulse_width_failing_endpoints": 0
+    },
+    "utilization_with_shell": {
+      "CLB LUTs": {
+        "used": 1906208,
+        "available": 2574208,
+        "percent": 74.05
+      },
+      "CLB Registers": {
+        "used": 1767564,
+        "available": 5148416,
+        "percent": 34.33
+      },
+      "Block RAM Tile": {
+        "used": 3318,
+        "available": 3741,
+        "percent": 88.69
+      },
+      "URAM": {
+        "used": 792,
+        "available": 1925,
+        "percent": 41.14
+      },
+      "DSP Slices": {
+        "used": 3384,
+        "available": 10848,
+        "percent": 31.19
+      }
+    },
+    "utilization_report_sha256": "eb250320b71b18d142ecd16ac1924efc32fac14cc2f97d998c16baca473ee6bf",
+    "route_report_sha256": "7f915a0052c8f8d59954658c2e1856a5276004031f9f32a30b63e2db79155404",
+    "counter_structure": {
+      "engines": 12,
+      "running_bits": 64,
+      "completed_bits": 64,
+      "active_has_start_register_in_fanin": true
+    }
+  }
+}
