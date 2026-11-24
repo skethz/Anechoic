@@ -166,6 +166,8 @@ Values of other machines are quoted from the cited publications, with their targ
 
 On the same GH200, each solver ran 1,000 requests of 120 chains with the same initial spin signs and 21,400 steps per chain. Anechoic reached the target in **843/1,000 requests (104.11 ms TTS₉₉)** and our GbSB implementation in **1,000/1,000 (444.41 ms)**. Their mean device times per request were 41.86 and 444.41 ms, respectively. [Protocol, CUDA kernels, all 240,000 final states and verification instructions](gpu/k2000_gbsb/README.md)
 
+At 3,650 steps on the same 120,000 initial states, Anechoic reached cut 33,337 in 258/1,000 rounds on both devices. V80 ran ten consecutive 12-engine launches per 120-chain round and measured **96.37 ms TTS₉₉**. GH200 ran 120 chains together and measured **91.89 ms**. [V80 cycle counters, endpoint files and verification](fpga/v80_sca/k2000_paired/README.md)
+
 ### One engine on three platforms
 
 The same bit-exact engine on K2000, cut ≥ 33,000. The V80 and GH200 are measured; the ASIC is estimated.

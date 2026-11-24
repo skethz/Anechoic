@@ -1,0 +1,78 @@
+{
+  "steps": 3650,
+  "target": 33337,
+  "physical_engines": 12,
+  "mhz": 249.99999975,
+  "same_gh200_endpoint_vectors": 120000,
+  "same_final_cuts_and_flip_counts": 120000,
+  "trajectory_hits": 300,
+  "block_endpoint_sha256": [
+    "7bd045a53b6e52ba1035fa2af622aa5b6c2d13b4b22763a48409e830a4cf3ed5",
+    "379f5bf6159cbd20d85af76848a5e19fbc962677d8f3a9e98919f9d461b6d696",
+    "3cbb5793c9a89a1c09f133e3746c4eee7610f2fa36b26dd7448b9a3ac2be8f73",
+    "bb97b02c9f10467fa77f1da72a97563063aff2785f785e05e2e1f6462e2d8900"
+  ],
+  "v80_native_12_first1000": {
+    "successes": 34,
+    "n": 1000,
+    "success_fraction": 0.034,
+    "binomial_interval_95": [
+      0.023658648107588914,
+      0.04718943861570593
+    ],
+    "mean_device_ms": 0.6245318006245318,
+    "TTS99_ms": 83.14411981321895,
+    "integer_TTS99_ms": 83.68726128368726,
+    "mean_host_ms": 1.441088507,
+    "host_TTS99_ms": 191.85257719085362
+  },
+  "v80_native_12_all10000": {
+    "successes": 297,
+    "n": 10000,
+    "success_fraction": 0.0297,
+    "binomial_interval_95": [
+      0.026460348004093276,
+      0.03321723294302606
+    ],
+    "mean_device_ms": 0.624485038624485,
+    "TTS99_ms": 95.38514361566862,
+    "integer_TTS99_ms": 95.5462109095462,
+    "mean_host_ms": 1.4545161174999999,
+    "host_TTS99_ms": 222.16581691794352
+  },
+  "v80_ten_waves_of_12": {
+    "successes": 258,
+    "n": 1000,
+    "success_fraction": 0.258,
+    "binomial_interval_95": [
+      0.2311270769748526,
+      0.28630561316845893
+    ],
+    "mean_device_ms": 6.244850386244851,
+    "TTS99_ms": 96.37405200658762,
+    "integer_TTS99_ms": 99.91760617991761,
+    "mean_host_ms": 14.545394237,
+    "host_TTS99_ms": 224.472724557279
+  },
+  "gh200_native_120": {
+    "successes": 258,
+    "n": 1000,
+    "success_fraction": 0.258,
+    "binomial_interval_95": [
+      0.2311270769748526,
+      0.28630561316845893
+    ],
+    "mean_device_ms": 5.954007777451,
+    "TTS99_ms": 91.8856048906456,
+    "integer_TTS99_ms": 95.264124439216,
+    "mean_host_ms": 5.970855115,
+    "host_TTS99_ms": 92.14560250222907
+  },
+  "programmed_pdi_sha256": "67e591f351985531c3b8340f9c25bb80bc6add80c98e026ef26ca75f21f770b4",
+  "build_hashes": {
+    "timing_signoff": "781baad977ffbd2b3cfd10e5a81da077189be966fa73aa60f70b1e0abe76f220",
+    "timer_structure": "815e877cc2d4d12ea93936ae699e7eae316888c10becce290c5f847caa5b9efb",
+    "routed_timing": "7f915a0052c8f8d59954658c2e1856a5276004031f9f32a30b63e2db79155404",
+    "pdi": "67e591f351985531c3b8340f9c25bb80bc6add80c98e026ef26ca75f21f770b4"
+  }
+}
