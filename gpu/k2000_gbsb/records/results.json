@@ -1,0 +1,247 @@
+{
+  "33000": {
+    "first_500": {
+      "anechoic": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 60000,
+        "trajectory_count": 60000,
+        "device_ms": 41.371505130980005,
+        "host_ms": 41.389017532,
+        "p50_device_ms": 43.988416674999996,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 41.371505130980005,
+        "whole_tts_ms": 41.371505130980005,
+        "host_tts_ms": 41.389017532
+      },
+      "gbsb": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 60000,
+        "trajectory_count": 60000,
+        "device_ms": 444.970043853748,
+        "host_ms": 444.991792964,
+        "p50_device_ms": 473.29421997049997,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 444.970043853748,
+        "whole_tts_ms": 444.970043853748,
+        "host_tts_ms": 444.991792964
+      },
+      "tts_ratio_gbsb_over_anechoic": 10.755471488044641
+    },
+    "next_500": {
+      "anechoic": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 60000,
+        "trajectory_count": 60000,
+        "device_ms": 42.3464313624,
+        "host_ms": 42.363643132,
+        "p50_device_ms": 44.021711350000004,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 42.3464313624,
+        "whole_tts_ms": 42.3464313624,
+        "host_tts_ms": 42.363643132
+      },
+      "gbsb": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 60000,
+        "trajectory_count": 60000,
+        "device_ms": 443.84693658447,
+        "host_ms": 443.86908524,
+        "p50_device_ms": 474.4326934815,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 443.84693658447,
+        "whole_tts_ms": 443.84693658447,
+        "host_tts_ms": 443.86908524
+      },
+      "tts_ratio_gbsb_over_anechoic": 10.481330357829586
+    },
+    "all_1000": {
+      "anechoic": {
+        "n": 1000,
+        "round_hits": 1000,
+        "trajectory_hits": 120000,
+        "trajectory_count": 120000,
+        "device_ms": 41.85896824669,
+        "host_ms": 41.876330331999995,
+        "p50_device_ms": 44.008272175,
+        "probability": 1.0,
+        "ci95": [
+          0.9963179161031344,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 41.85896824669,
+        "whole_tts_ms": 41.85896824669,
+        "host_tts_ms": 41.876330331999995
+      },
+      "gbsb": {
+        "n": 1000,
+        "round_hits": 1000,
+        "trajectory_hits": 120000,
+        "trajectory_count": 120000,
+        "device_ms": 444.408490219109,
+        "host_ms": 444.430439102,
+        "p50_device_ms": 473.418838501,
+        "probability": 1.0,
+        "ci95": [
+          0.9963179161031344,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 444.408490219109,
+        "whole_tts_ms": 444.408490219109,
+        "host_tts_ms": 444.430439102
+      },
+      "tts_ratio_gbsb_over_anechoic": 10.616804685678096
+    }
+  },
+  "33337": {
+    "first_500": {
+      "anechoic": {
+        "n": 500,
+        "round_hits": 407,
+        "trajectory_hits": 861,
+        "trajectory_count": 60000,
+        "device_ms": 41.371505130980005,
+        "host_ms": 41.389017532,
+        "p50_device_ms": 43.988416674999996,
+        "probability": 0.814,
+        "ci95": [
+          0.777071817589018,
+          0.8471649082423204
+        ],
+        "restart_multiplier": 2.7378993018004043,
+        "tts_ms": 113.271015012542,
+        "whole_tts_ms": 124.11451539294,
+        "host_tts_ms": 113.31896220306749
+      },
+      "gbsb": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 59137,
+        "trajectory_count": 60000,
+        "device_ms": 444.970043853748,
+        "host_ms": 444.991792964,
+        "p50_device_ms": 473.29421997049997,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 444.970043853748,
+        "whole_tts_ms": 444.970043853748,
+        "host_tts_ms": 444.991792964
+      },
+      "tts_ratio_gbsb_over_anechoic": 3.9283663504249384
+    },
+    "next_500": {
+      "anechoic": {
+        "n": 500,
+        "round_hits": 436,
+        "trajectory_hits": 957,
+        "trajectory_count": 60000,
+        "device_ms": 42.3464313624,
+        "host_ms": 42.363643132,
+        "p50_device_ms": 44.021711350000004,
+        "probability": 0.872,
+        "ci95": [
+          0.8395036090483408,
+          0.9000116496324111
+        ],
+        "restart_multiplier": 2.2401683845093627,
+        "tts_ms": 94.86313673484422,
+        "whole_tts_ms": 127.03929408719999,
+        "host_tts_ms": 94.9016939969436
+      },
+      "gbsb": {
+        "n": 500,
+        "round_hits": 500,
+        "trajectory_hits": 59048,
+        "trajectory_count": 60000,
+        "device_ms": 443.84693658447,
+        "host_ms": 443.86908524,
+        "p50_device_ms": 474.4326934815,
+        "probability": 1.0,
+        "ci95": [
+          0.9926493899480923,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 443.84693658447,
+        "whole_tts_ms": 443.84693658447,
+        "host_tts_ms": 443.86908524
+      },
+      "tts_ratio_gbsb_over_anechoic": 4.678813624148698
+    },
+    "all_1000": {
+      "anechoic": {
+        "n": 1000,
+        "round_hits": 843,
+        "trajectory_hits": 1818,
+        "trajectory_count": 120000,
+        "device_ms": 41.85896824669,
+        "host_ms": 41.876330331999995,
+        "p50_device_ms": 44.008272175,
+        "probability": 0.843,
+        "ci95": [
+          0.8189474466392856,
+          0.8650123407930691
+        ],
+        "restart_multiplier": 2.4872517540781702,
+        "tts_ms": 104.11379219548212,
+        "whole_tts_ms": 125.57690474006999,
+        "host_tts_ms": 104.15697607262388
+      },
+      "gbsb": {
+        "n": 1000,
+        "round_hits": 1000,
+        "trajectory_hits": 118185,
+        "trajectory_count": 120000,
+        "device_ms": 444.408490219109,
+        "host_ms": 444.430439102,
+        "p50_device_ms": 473.418838501,
+        "probability": 1.0,
+        "ci95": [
+          0.9963179161031344,
+          1.0
+        ],
+        "restart_multiplier": 1,
+        "tts_ms": 444.408490219109,
+        "whole_tts_ms": 444.408490219109,
+        "host_tts_ms": 444.430439102
+      },
+      "tts_ratio_gbsb_over_anechoic": 4.268488169028517
+    }
+  },
+  "ratio95_paired_block_bootstrap": [
+    3.9620965885763244,
+    4.610977306901408
+  ],
+  "paired_rounds": 1000,
+  "scores_recomputed_from_signed_edges": 240000,
+  "paired_initial_signs_checked": 120000
+}

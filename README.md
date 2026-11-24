@@ -162,6 +162,10 @@ Power comes from the toggle rates of one K2000 trial with schedule O1 in RTL sim
 
 Values of other machines are quoted from the cited publications, with their targets and conditions in Table 4 of the paper. All CMOS and ReRAM results are simulations. Anechoic uses Onsager-κT and the primary estimator: FPGA is an AMD Alveo V80 with 12 engines at 250 MHz, GPU is an NVIDIA GH200 with 120 chains, and CMOS is a simulation of 12 GlobalFoundries 22FDX engines routed at 1.25 GHz.
 
+### Matched GH200 comparison at cut 33,337
+
+On the same GH200, each solver ran 1,000 requests of 120 chains with the same initial spin signs and 21,400 steps per chain. Anechoic reached the target in **843/1,000 requests (104.11 ms TTS₉₉)** and our GbSB implementation in **1,000/1,000 (444.41 ms)**. Their mean device times per request were 41.86 and 444.41 ms, respectively. [Protocol, CUDA kernels, all 240,000 final states and verification instructions](gpu/k2000_gbsb/README.md)
+
 ### One engine on three platforms
 
 The same bit-exact engine on K2000, cut ≥ 33,000. The V80 and GH200 are measured; the ASIC is estimated.
