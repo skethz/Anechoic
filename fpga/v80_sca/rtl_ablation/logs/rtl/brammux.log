@@ -1,0 +1,56 @@
+beats 33050 words 5024 DRAIN 2
+launch start: beat 0 cycle 20
+launch start: beat 1 cycle 21
+trial start: cycle 35146
+trial out: cycle 47554
+trial end: word 33 cycle 47668 flips 48831
+trial start: cycle 48633
+trial out: cycle 60890
+trial end: word 347 cycle 61017 flips 47209
+trial start: cycle 61984
+trial out: cycle 74269
+trial end: word 661 cycle 74385 flips 48126
+trial start: cycle 75362
+trial out: cycle 87458
+trial end: word 972 cycle 87580 flips 6695744589489548723
+trial start: cycle 88553
+trial out: cycle 100642
+trial start: cycle 101712
+trial out: cycle 113851
+trial end: word 1598 cycle 113963 flips 3590977991812241076
+trial start: cycle 114937
+trial out: cycle 126954
+trial end: word 1917 cycle 127067 flips 46018
+trial start: cycle 128041
+trial out: cycle 140093
+trial end: word 2231 cycle 140205 flips 46004
+trial start: cycle 141185
+trial out: cycle 153239
+trial end: word 2542 cycle 153344 flips 11608025589145620800
+trial start: cycle 154328
+trial out: cycle 166560
+trial end: word 2853 cycle 166656 flips 7063194882718652100
+trial start: cycle 167663
+trial out: cycle 180022
+trial end: word 3173 cycle 180156 flips 48458
+trial start: cycle 181124
+trial out: cycle 193448
+trial start: cycle 194524
+trial out: cycle 206760
+trial end: word 3801 cycle 206876 flips 47675
+trial start: cycle 207847
+trial out: cycle 219985
+trial end: word 4115 cycle 220095 flips 47362
+trial start: cycle 221068
+trial out: cycle 233315
+trial end: word 4425 cycle 233415 flips 8684550615931347329
+trial start: cycle 234379
+trial out: cycle 246578
+trial end: word 4743 cycle 246691 flips 47600
+PROTOCOL input 33050 output 5024 input_stall 0 output_stall 8478 prefetch_busy 0
+DONE: 5024 words, 0 errors, cycle 247679
+112015110244844386832614885721057215812
+- work/rtl/generated/tb_protocol_stress.v:55: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 495us; walltime 22.606 s; speed 21.902 us/s
+- Verilator: cpu 22.617 s on 1 threads; alloced 1791 MB

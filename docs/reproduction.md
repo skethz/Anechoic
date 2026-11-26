@@ -108,6 +108,8 @@ The V80 builds run from `fpga/v80_sca/scripts/` and need AMD Vivado/Vitis 2025.1
 
 ## RTL regressions
 
+The [single-core ablation results](../fpga/v80_sca/rtl_ablation/TABLE.md) can be regenerated from the saved observations. The [reproduction instructions](../fpga/v80_sca/rtl_ablation/README.md) also cover RTL simulation and Vivado implementation.
+
 `asic/gf22_engine_v64_1p25_20261007/scripts/questa_rtl_regression.sh` compares the unmodified v6 engine with the 1.25 GHz ASIC variant on all vector sets, using Siemens Questa. Set the paths for your environment. The vectors come from `scripts/gen_vectors_x5.cpp` and `fpga/v80_sca/src/v6/gen_vectors.cpp`.
 
 ## Proofs

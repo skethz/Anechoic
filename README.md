@@ -113,6 +113,8 @@ Twelve hand-written RTL engines run at 250 MHz on the AMD Alveo V80. One step ta
 
 The RTL is in [`fpga/v80_sca/src/v6/`](fpga/v80_sca/src/v6/), the design in [`DESIGN.md`](fpga/v80_sca/DESIGN.md), and the measurements in [`RESULTS_HW.md`](fpga/v80_sca/RESULTS_HW.md) and [`RESULTS_MULTIBIT.md`](fpga/v80_sca/RESULTS_MULTIBIT.md). The builds also use the AVED shell and platform scripts that are not part of this repository; see the [FPGA notes](docs/reproduction.md#fpga-builds).
 
+The [single-core RTL ablations](fpga/v80_sca/rtl_ablation/README.md) include the K2000 cycle and resource comparisons, the exact inputs and design variants, and the original measurement logs.
+
 ## <a name="gpu"></a> 🔨 GPU
 
 The GH200 kernel reproduces the reference model, and therefore the V80, in 424 of 424 traced trials. Up to 240 chains run concurrently.
